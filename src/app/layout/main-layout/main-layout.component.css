@@ -1,0 +1,56 @@
+/* :host {
+    display: flex;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .app-layout {
+    height: 100vh;
+  }
+  .sidebar{
+    display: block;
+    width: 256px;
+    float: left;
+  }
+  .main-container{
+    display: block;
+    width: calc(100% - 256px);
+    float: right;
+}
+  nz-content {
+    margin: 24px;
+  }
+
+  .inner-content {
+    padding: 24px;
+    background: #fff;
+    height: 100%;
+  } */
+
+  /* :host {
+    text-align: center;
+  } */
+  nz-content {
+    margin: 15px;
+    background: #fff;
+    height: 100%;
+  }
+
+  nz-sider {
+    height: 100vh !important;
+    max-width: 256px !important;
+    min-width: 256px !important;
+    width: 256px !important;
+  }
+
+
+
+  nz-layout {
+    margin-bottom: 48px;
+  }
+
+  nz-layout nz-layout,
+  nz-layout:last-child {
+    margin: 0;
+  }

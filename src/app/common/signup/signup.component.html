@@ -1,0 +1,53 @@
+
+<div style="background: #ECECEC;padding:30px;height: 100vh;">
+  <nz-card style="width:30%; margin: auto;border-radius: 7px;" [nzBordered]="false" nzTitle="Singup">
+    <form nz-form nzLayout="vertical" [formGroup]="validateForm" (ngSubmit)="submitForm()">
+      <nz-form-item>
+        <nz-form-label nzRequired>Username</nz-form-label>
+        <nz-form-control nzHasFeedback nzValidatingTip="Validating..." [nzErrorTip]="userErrorTpl">
+          <input nz-input formControlName="userName" placeholder="async validate try to write JasonWood" />
+          <ng-template #userErrorTpl let-control>
+            <ng-container *ngIf="control.hasError('required')">Please input your username!</ng-container>
+            <ng-container *ngIf="control.hasError('duplicated')">The username is redundant!</ng-container>
+          </ng-template>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label nzRequired>E-mail</nz-form-label>
+        <nz-form-control nzHasFeedback [nzErrorTip]="emailErrorTpl">
+          <input nz-input formControlName="email" placeholder="email" type="email" />
+          <ng-template #emailErrorTpl let-control>
+            <ng-container *ngIf="control.hasError('email')">The input is not valid E-mail!</ng-container>
+            <ng-container *ngIf="control.hasError('required')">Please input your E-mail!</ng-container>
+          </ng-template>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label nzRequired>Password</nz-form-label>
+        <nz-form-control nzHasFeedback nzErrorTip="Please input your password!">
+          <input nz-input type="password" formControlName="password" (ngModelChange)="validateConfirmPassword()" />
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label nzRequired>Confirm Password</nz-form-label>
+        <nz-form-control nzHasFeedback [nzErrorTip]="passwordErrorTpl">
+          <input nz-input type="password" formControlName="confirm" placeholder="confirm your password" />
+          <ng-template #passwordErrorTpl let-control>
+            <ng-container *ngIf="control.hasError('required')">Please confirm your password!</ng-container>
+            <ng-container *ngIf="control.hasError('confirm')">Password is inconsistent!</ng-container>
+          </ng-template>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-control>
+          <nz-space>
+          <button nz-button *nzSpaceItem nzType="primary" [disabled]="!validateForm.valid">Singup</button>
+          <button nz-button *nzSpaceItem (click)="resetForm($event)">Cancel</button>
+        </nz-space>
+        </nz-form-control>
+      </nz-form-item>
+    </form>
+    Or
+    <a href="/login">Login</a>
+  </nz-card>
+</div>

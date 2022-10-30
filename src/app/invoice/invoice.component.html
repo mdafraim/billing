@@ -1,0 +1,47 @@
+<ng-container *ngIf="keys">
+  <nz-table #filterTable [nzData]="listOfData" nzTableLayout="fixed" [nzScroll]="{y: '400px'}" nzFrontPagination="false" class="capitalize-case">
+    <thead>
+      <tr>
+        <!-- <th *ngFor="let column of keys">
+          {{ column }}
+        </th> -->
+        <th
+        *ngFor="let column of listOfColumns"
+        [nzSortOrder]="column.sortOrder"
+        [nzSortFn]="column.sortFn"
+        [nzSortDirections]="column.sortDirections"
+        [nzFilterMultiple]="column.filterMultiple"
+        [nzFilters]="column.listOfFilter"
+        [nzFilterFn]="column.filterFn"
+      >
+        {{ column.name }}
+      </th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of filterTable?.data">
+        <td>{{ data.invoice_id }}</td>
+        <td>{{ data.invoice_to }}</td>
+        <td>{{ data.amount }}</td>
+        <td>{{ data.created_on }}</td>
+        <td>{{ data.last_date }}</td>
+        <td>{{ data.status }}</td>
+        <td>
+          <a [href]="'/add-invoice'">
+            <span nz-icon nzType="plus-circle" nzTheme="fill"></span>
+          </a>
+          <nz-divider nzType="vertical"></nz-divider>
+          <a [href]="'/edit-invoice/' + data._id">
+            <span nz-icon nzType="edit" nzTheme="fill"></span>
+          </a>
+          <nz-divider nzType="vertical"></nz-divider>
+          <a (click)="delete(data._id)">
+            <span nz-icon nzType="delete" nzTheme="fill"></span>
+          </a>
+
+        </td>
+      </tr>
+    </tbody>
+  </nz-table>
+</ng-container>

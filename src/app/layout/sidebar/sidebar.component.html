@@ -1,0 +1,65 @@
+     <div class="sidebar-logo">
+        <a href="https://ng.ant.design/" target="_blank">
+            <img src="https://ng.ant.design/assets/img/logo.svg" alt="logo">
+            <h1>Software Bazar</h1>
+        </a>
+    </div>
+    <ul nz-menu nzTheme="dark" nzMode="inline" [nzInlineCollapsed]="isCollapsed">
+        <li nz-submenu nzOpen nzTitle="Dashboard" nzIcon="dashboard">
+            <ul>
+                <li nz-menu-item nzMatchRouter>
+                    <a routerLink="/welcome">Welcome</a>
+                </li>
+            </ul>
+        </li>
+        <li nz-submenu nzOpen nzTitle="Customer" nzIcon="usergroup-add">
+            <ul>
+                <li nz-menu-item nzMatchRouter>
+                    <a routerLink="/customer">Customer Details</a>
+                </li>
+                <li nz-menu-item nzMatchRouter>
+                    <a routerLink="/add-customer">Add Customer</a>
+                </li>
+            </ul>
+        </li>
+        <li nz-submenu  nzOpen nzTitle="Invoices" nzIcon="book">
+            <ul>
+                <li nz-menu-item nzMatchRouter>
+                    <a routerLink="/invoice">Invoice Details</a>
+                </li>
+                <li nz-menu-item nzMatchRouter>
+                    <a routerLink="/add-invoice">Add Invoice</a>
+                </li>
+            </ul>
+        </li>
+        <li nz-submenu nzOpen nzTitle="Account" nzIcon="account-book">
+            <ul>
+                <li nz-menu-item nzMatchRouter>
+                    <a routerLink="/profile">Profile</a>
+                </li>
+                <li nz-menu-item nzMatchRouter>
+                    <a routerLink="/profile">Edit Profile</a>
+                </li>
+            </ul>
+        </li>
+        <li nz-submenu  nzOpen nzTitle="Reports" nzIcon="pie-chart">
+            <ul>
+                <li nz-menu-item nzMatchRouter>
+                    <a routerLink="/sales-report">Sales Report</a>
+                </li>
+                <li nz-menu-item nzMatchRouter>
+                    <a routerLink="/expense-report">Expense Report</a>
+                </li>
+                <li nz-menu-item nzMatchRouter>
+                    <a routerLink="/profit-loss-report">Profit & Loss Report</a>
+                </li>
+                <li nz-menu-item nzMatchRouter>
+                    <a routerLink="/tax-report">Tax Report</a>
+                </li>
+            </ul>
+        </li>
+        <li  nz-menu-item nzTitle="Logout" nzIcon="dashboard">
+            <span nz-icon nzType="logout"></span>
+            <span>Logout</span>
+        </li>
+    </ul>

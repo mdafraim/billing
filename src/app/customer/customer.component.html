@@ -1,0 +1,49 @@
+<ng-container *ngIf="keys">
+  <nz-table #filterTable [nzData]="listOfData" nzTableLayout="fixed" [nzScroll]="{y: '400px'}" nzFrontPagination="false" class="capitalize-case">
+    <thead>
+      <tr>
+        <!-- <th *ngFor="let column of keys">
+          {{ column }}
+        </th> -->
+        <th
+        *ngFor="let column of listOfColumns"
+        [nzSortOrder]="column.sortOrder"
+        [nzSortFn]="column.sortFn"
+        [nzSortDirections]="column.sortDirections"
+        [nzFilterMultiple]="column.filterMultiple"
+        [nzFilters]="column.listOfFilter"
+        [nzFilterFn]="column.filterFn"
+      >
+        {{ column.name }}
+      </th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of filterTable?.data">
+        <td>{{ data.name }}</td>
+        <td>{{ data.email }}</td>
+        <td>{{ data.city }}</td>
+        <td>{{ data.state }}</td>
+        <td>{{ data.country }}</td>
+        <td>{{ data.address }}</td>
+        <td>{{ data.zip }}</td>
+        <td>{{ data.phone }}</td>
+        <td>
+          <a [href]="'/add-customer'">
+            <span nz-icon nzType="plus-circle" nzTheme="fill"></span>
+          </a>
+          <nz-divider nzType="vertical"></nz-divider>
+          <a [href]="'/edit-customer/' + data._id">
+            <span nz-icon nzType="edit" nzTheme="fill"></span>
+          </a>
+          <nz-divider nzType="vertical"></nz-divider>
+          <a (click)="delete(data._id)">
+            <span nz-icon nzType="delete" nzTheme="fill"></span>
+          </a>
+
+        </td>
+      </tr>
+    </tbody>
+  </nz-table>
+</ng-container>

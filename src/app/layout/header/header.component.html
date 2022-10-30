@@ -1,0 +1,40 @@
+<nz-header>
+  <div class="app-header">
+    <!-- <span class="header-trigger" (click)="isCollapsed = !isCollapsed">
+        <span class="trigger"
+           nz-icon
+           [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
+        ></span>
+    </span>
+    <span>
+      <nz-avatar [nzSize]="40" nzIcon="user"></nz-avatar>
+    </span> -->
+    <div nz-row nzJustify="end">
+      <nz-space>
+      <div nz-col *nzSpaceItem  >
+        <span nz-icon  class="bell-icon" nzType="bell" nzTheme="outline"></span>
+      </div>
+      <div nz-col *nzSpaceItem >
+        <a nz-dropdown [nzDropdownMenu]="menu">
+        <nz-avatar [nzSize]="40" nzSrc="../../assets/images/profile.jpg" nzIcon="user"></nz-avatar>
+          <!-- <span nz-icon nzType="down"></span> -->
+        </a>
+        <nz-dropdown-menu #menu="nzDropdownMenu">
+          <ul nz-menu style="margin-top: 14px; width: 200px;">
+            <li nz-menu-item>
+              <a href="/profile">Profile</a>
+            </li>
+            <!-- <li nz-menu-item>
+              <a href=""></a>
+            </li> -->
+            <li nz-menu-divider></li>
+            <li nz-menu-item ><a href="/signout">Singout</a></li>
+          </ul>
+        </nz-dropdown-menu>
+      </div>
+      </nz-space>
+      </div>
+  </div>
+
+
+</nz-header>

@@ -1,0 +1,68 @@
+<form nz-form nzLayout="vertical" [formGroup]="validateForm" (ngSubmit)="submitForm()" style="margin: 20px;">
+  <div nz-row >
+    <div nz-col nzSpan="11">
+      <nz-form-item>
+        <nz-form-label nzRequired nzFor="invoice_id">Invoice Id</nz-form-label>
+        <nz-form-control nzErrorTip="The input is not valid Invoice Id!">
+          <input nz-input formControlName="invoice_id" id="invoice_id" />
+        </nz-form-control>
+      </nz-form-item>
+    </div>
+    <div nz-col nzSpan="2"> </div>
+    <div nz-col nzSpan="11">
+      <nz-form-item>
+        <nz-form-label nzRequired nzFor="invoice_to">Invoice To</nz-form-label>
+        <nz-form-control nzErrorTip="The input is not valid Invoice To!">
+          <input nz-input formControlName="invoice_to" id="invoice_to" />
+        </nz-form-control>
+      </nz-form-item>
+    </div>
+  </div>
+  <div nz-row>
+    <div nz-col nzSpan="11">
+      <nz-form-item>
+        <nz-form-label nzRequired nzFor="amount">Amount</nz-form-label>
+        <nz-form-control nzErrorTip="The input is not valid Amount!">
+          <input nz-input formControlName="amount" id="amount" />
+        </nz-form-control>
+      </nz-form-item>
+    </div>
+    <div nz-col nzSpan="2"> </div>
+    <div nz-col nzSpan="11">
+      <nz-form-item>
+        <nz-form-label nzRequired nzFor="created_on">Created On</nz-form-label>
+        <nz-form-control nzErrorTip="The input is not valid Created On!">
+          <input nz-input formControlName="created_on" id="created_on" />
+        </nz-form-control>
+      </nz-form-item>
+    </div>
+  </div>
+  <div nz-row>
+    <div nz-col nzSpan="11">
+      <nz-form-item>
+        <nz-form-label nzRequired nzFor="last_date">Last Date</nz-form-label>
+        <nz-form-control nzErrorTip="The input is not valid Last Date!">
+          <input nz-input formControlName="last_date" id="last_date" />
+        </nz-form-control>
+      </nz-form-item>
+    </div>
+    <div nz-col nzSpan="2"> </div>
+    <div nz-col nzSpan="11">
+      <nz-form-item>
+        <nz-form-label nzRequired nzFor="status">Status</nz-form-label>
+        <nz-form-control nzErrorTip="The input is not valid Status!">
+          <input nz-input formControlName="status" id="status" />
+        </nz-form-control>
+      </nz-form-item>
+    </div>
+  </div>
+  <div nz-row>
+    <div nz-col nzSpan="24">
+      <nz-form-item class="register-area">
+        <nz-form-control>
+          <button nz-button nzType="primary">Add Invoice</button>
+        </nz-form-control>
+      </nz-form-item>
+    </div>
+  </div>
+</form>
